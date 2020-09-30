@@ -1,4 +1,3 @@
-
 const Discord = require('discord.js');
 const { Client, MessageEmbed } = require('discord.js');
 const client = new Discord.Client();
@@ -8,6 +7,29 @@ const path = require('path');
 
 client.on('ready', () => {
   console.log(`로그인했다`); 
+});
+
+client.on('message', msg => {
+    if (msg.content === '!선택맵') {
+        const embed1 = new MessageEmbed()
+        .setColor(`40FF00`)
+        .setTitle("이 맵들은 선택 맵들 입니다!")
+        .addFields(
+            { name: '빌리지 남산', value: '커트라인 : 1분 48초' },
+            { name: '차이나 서안 병마용', value: '커트라인 : 1분 59초' },
+            { name: '월드 두바이 다운타운', value: '커트라인 : 2분 1초' },
+            { name: '빌리지 손가락', value: '커트라인 : 1분 37초' },
+            { name: '노르테유 익스프레스', value: '커트라인 : 2분 13초' },
+            { name: '포레스트 아찔한 다운힐', value: '커트라인 : 2분 6초' },
+            { name: '월드 리오 다운힐', value: '커트라인 : 1분 20초' },
+            { name: '빌리지 운하', value: '커트라인 : 1분 14초' },
+            { name: '쥐라기 아슬아슬 화산 점프', value: '커트라인 : 1분 41초' },
+        )
+        .setAuthor(`선택 맵은 두 맵을 정해주세요!`)
+        .setTimestamp()
+        msg.reply(embed1);
+        
+    }
 });
 
 client.on("message", async message => {
