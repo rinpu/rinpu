@@ -82,7 +82,7 @@ client.on('message', msg => {
     }
   
     if(command[0] == "코로나") {
-      msg.channel.send("코로나19 API 점검으로 인해 heroku 호스팅을 이용한 임시 API 서버로 정보를 가져오고 있습니다.\n정보를 가져오는데 8~10초가 걸릴 수 있으니 조금만 기다려 주세요.");
+      msg.channel.send("Waiting Server Requests.");
       request('https://rok-corona19-api.herokuapp.com/domestic', (err, res, body) => {
         let json = JSON.parse(body);
   
